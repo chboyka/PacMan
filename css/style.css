@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+main {
+    background-image: url("../img/bg.jpg");
+    min-height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
+.won {
+    position: absolute;
+    visibility: hidden;
+}
+
+.pacman {
+    background-image: url(../img/packman1.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 1px;
+    transition: margin 0.1s linear;
+    z-index: 1;
+}
+
+.fruit {
+    background-image: url(../img/fruit.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    margin: 100px;
+    transition: margin 0.1s linear;
+    z-index: 0;
+}

@@ -1,23 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="shortcut icon" href="./packman1.png" type="image/x-icon">
-    <script src="./script.js"></script>
-    <script src="./bootstrap.bundle.js"></script>
-    <link rel="stylesheet" href="./bootstrap.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./img/packman1.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PacMan</title>
 </head>
+
 <body onload="rotateScreen()" onkeydown="press(event)">
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Game Over!</h5>
+
+                </div>
+                <div class="modal-body">
+                    Do you want to Resume?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="resume()">Yes,
+                        Resume</button>
+                    <button type="button" class="btn btn-secondary" onclick="location.reload()">No,
+                        Restart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="won">
+        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_lg6lh7fp.json" background="transparent"
+            speed="1" style="width: 100vw; height: 100vh; position: absolute;" loop autoplay></lottie-player>
+    </div>
+
+    <div id="won" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered"" role=" document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Congratulations!</h5>
+
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">You Won the game...</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary" onclick="location.reload()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main class="bg-dark">
         <label for="marks" class="text-light lead">Marks : </label>
         <label for="marks" id="marks" class="text-light lead">0</label>
         <div class="pacman" id="pacman"></div>
         <div class="fruit" id="fruit"></div>
     </main>
-    
+
+
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/script.js"></script>
 </body>
+
 </html>
