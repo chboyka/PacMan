@@ -22,17 +22,18 @@ main {
 }
 
 .pacman {
-    background-image: url(../img/packman1.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     position: absolute;
     width: 50px;
     height: 50px;
+    z-index: 1;
+    transition: margin 0.1s linear;
     border-radius: 50%;
     margin: 1px;
-    transition: margin 0.1s linear;
-    z-index: 1;
+}
+
+.pacman img {
+    width: 50px;
+    height: 50px;
 }
 
 .fruit {

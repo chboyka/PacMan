@@ -15,15 +15,15 @@ var direction1 = -1;
 var fruitX = 100;
 var fruitY = 100;
 
-var bgAudio = new Audio("../audio/bg.mp3");
+var bgAudio = new Audio("./audio/bg.mp3");
 bgAudio.pause();
 bgAudio.currentTime = 0;
 bgAudio.loop = true;
 var audio_started = false;
 
-var eatAudio = new Audio("../audio/eat.mp3");
-var deadAudio = new Audio("../audio/dead.wav");
-var wonAudio = new Audio("../audio/won.wav");
+var eatAudio = new Audio("./audio/eat.mp3");
+var deadAudio = new Audio("./audio/dead.wav");
+var wonAudio = new Audio("./audio/won.wav");
 
 function rotateScreen() {
     fruitMove();
@@ -132,10 +132,10 @@ function fruitMove() {
 function speedUp() {
     if (speed > 10)
         speed -= 5;
-    // else if (speed > 1)
-    //     speed -= 1
-    // else if (speed < 0.1)
-    //     speed -= 0.1
+    else if (speed > 1)
+        speed -= 1
+    else if (speed > 0.1)
+        speed -= 0.1
     else {
         bgAudio.pause();
         wonAudio.play();
@@ -159,11 +159,19 @@ function speedDown() {
         speed += 10;
 }
 
+var pacmanImg = document.getElementById('pacman-img');
+var bg0Name = "./js/packman0.png";
+var bg1Name = "./js/packman1.png";
 
 function pacmanbg() {
-    var bgName = "../img/packman" + bg % 2 + ".png";
-    document.getElementById('pacman').style.backgroundImage = "url(" + bgName + ")";
-    bg++;
+    if (bg == 1) {
+        pacmanImg.src = bg1Name;
+        bg = 0;
+    }
+    else {
+        pacmanImg.src = bg0Name;
+        bg = 1;
+    }
 }
 
 
